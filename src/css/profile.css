@@ -1,0 +1,35 @@
+.main {
+    background-color: rgb(250, 247, 247);
+}
+
+.app {
+    background-color: white;
+    min-height: 100vh !important;
+    width: auto;
+}
+
+.banner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 500px;
+    /* background-image: url('../assets/images/fb.jpg'); */
+    background-repeat: round !important;
+    /* background-position: bottom !important; */
+    /* object-fit: contain;
+    object-position: center; */
+}
+
+.post {
+    background-color: rgb(248, 246, 235);
+    border-radius: 10px;
+}
+
+.post textarea {
+    border: none;
+}
+
+.post textarea:focus {
+    box-shadow: none;
+    border: none;
+}
