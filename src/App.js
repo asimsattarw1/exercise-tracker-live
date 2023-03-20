@@ -22,6 +22,7 @@ function App() {
       {myStore?.user != null && cookies?.jwt ?
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/edit/:id" element={<Home />} />
           <Route path="/activity-record" element={<Record />} />
         </Routes>
         :

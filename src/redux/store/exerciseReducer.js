@@ -7,15 +7,24 @@ const exerciseReducer = createSlice({
     user: null,
     loader: false,
     errors: {},
-    activitiesList: []
+    activitiesList: [],
+    edit: null
   },
   reducers: {
     userDataAction: (state, action) => {
       state.user = action.payload
     },
-    nullUserData: (state, action) => {
-      state.user = null
+    logoutAction: (state, action) => {
+      state.user = null;
+      state.activitiesList = [];
+      state.edit = null;
     },
+    editAction: (state, action) => {
+      state.edit = action.payload;
+    },
+    nullEditAction: (state, action) => {
+      state.edit = null;
+    }
   },
   extraReducers: {
     [getActivitiesList.pending]: (state, action) => {
@@ -31,5 +40,5 @@ const exerciseReducer = createSlice({
     },
   },
 });
-export const { userDataAction, nullUserData } = exerciseReducer.actions;
+export const { userDataAction, logoutAction, editAction, nullEditAction } = exerciseReducer.actions;
 export default exerciseReducer.reducer;

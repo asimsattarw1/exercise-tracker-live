@@ -3,10 +3,10 @@ import ActivityCard from '../../components/ActivityCard';
 import { card_arr } from '../../assets/data/card_data';
 import { useDispatch, useSelector } from 'react-redux';
 import { getActivitiesList } from '../../redux/store/actions';
+import { useNavigate } from 'react-router-dom';
 
 function CardList() {
-    const [apiData, setApiData] = useState(null);
-    const [delId, setDelId] = useState();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const myStore = useSelector((state) => state);
 
@@ -21,12 +21,16 @@ function CardList() {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    setDelId(id);
                     dispatch(getActivitiesList());
                 }
                 // setApiData([...data?.data]);
             });
     }
+
+    // const editActivity = (id) => {
+    //     alert(id.name)
+    //     // navigate(`/edit/${id}`);
+    // }
 
     // useEffect(() => {
     //     dispatch(getActivitiesList());

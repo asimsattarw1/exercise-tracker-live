@@ -13,17 +13,19 @@ const persistedReducer = persistReducer(persistConfig, exerciseReducer);
 const store = configureStore({
   reducer: persistedReducer,
   middleware: getDefaultMiddleware({
-    serializableCheck: {
-      ignoredActions: [
-        FLUSH,
-        REHYDRATE,
-        PAUSE,
-        PERSIST,
-        PURGE,
-        REGISTER
-      ],
-    },
-  }),
+    serializableCheck: false
+    //  {
+      //   ignoredActions: [
+      //     FLUSH,
+      //     REHYDRATE,
+      //     PAUSE,
+      //     PERSIST,
+      //     PURGE,
+      //     REGISTER
+      //   ],
+      // },
+    }
+    ),
 });
 
 export const persistor = persistStore(store);

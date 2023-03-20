@@ -11,12 +11,19 @@ import mypic from '../assets/images/c.avif';
 import { NavLink } from 'react-bootstrap';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import EditIcon from '@mui/icons-material/Edit';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { editAction } from '../redux/store/exerciseReducer';
 
 export default function CardList(props) {
   const [toolkitShow, setToolkitShow] = useState(false);
 
-  const deleteActivity = (id) => {
-    props?.deleteActivity(id);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const editActivity = (editObj) => {
+    navigate(`/edit/${editObj?._id}`)
+    dispatch(editAction(editObj));
   }
 
   return (
@@ -24,8 +31,8 @@ export default function CardList(props) {
       style={{ position: 'relative' }}
     >
       <div className={toolkitShow ? 'd-flex justify-content-end w-100' : 'd-none'} style={{ position: 'absolute' }}>
-        <DeleteForeverIcon className='ms-2 text-danger' title='Delete' onClick={() => deleteActivity(props?._id)} />
-        <EditIcon className='ms-3 text-warning' title='Edit' onClick={() => { }} />
+        <DeleteForeverIcon className='ms-2 text-danger' title='Delete' onClick={() => props?.deleteActivity(props?._id)} />
+        <EditIcon className='ms-3 text-warning' title='Edit' onClick={() => editActivity(props)} />
       </div>
       <MDBCardImage src={mypic} position='top' alt='...' />
       <MDBCardBody className="mb-5 bg-warning shadow-lg card-body d-flex flex-column align-items-center">

@@ -7,7 +7,7 @@ import "../../css/auth.css";
 import validator from "validator";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
-import { userDataAction, nullUserData } from "../../redux/store/exerciseReducer";
+import { userDataAction } from "../../redux/store/exerciseReducer";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -75,7 +75,6 @@ const Login = () => {
   // useEffect(() => {
   //   if (dateNow !== cookies?.date) {
   //     removeCookie("user", { path: "/" });
-  //     dispatch(nullUserData());
   //   }
   // }, [dateNow]);
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Input } from 'mdb-ui-kit';
 import {
     MDBRow,
@@ -11,7 +11,8 @@ import {
 } from 'mdb-react-ui-kit';
 import Select from 'react-select';
 import { getActivitiesList } from '../../redux/store/actions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { nullEditAction } from '../../redux/store/exerciseReducer';
 
 export default function ActivityForm() {
     const [name, setName] = useState('');
@@ -19,8 +20,10 @@ export default function ActivityForm() {
     const [activity, setActivity] = useState('');
     const [duration, setDuration] = useState('');
     const [date, setDate] = useState('');
+    const [editId, setEditId] = useState('');
 
     const dispatch = useDispatch();
+    const { edit } = useSelector(state => state)
 
     const activityOptions = [
         { value: 'Run', label: 'Run' },
@@ -33,23 +36,25 @@ export default function ActivityForm() {
     const submitData = async (e) => {
         e.preventDefault();
         try {
-            const postObj = { name, description, activity, duration, date };
+            const postObj = { id: editId, name: name, description: description, activity: activity.value, duration: duration, date: date, };
             const requestOptions = {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(postObj)
             };
 
-            fetch('http://localhost:7000/activity/add', requestOptions)
+            fetch(editId ? 'http://localhost:7000/activity/update' : 'http://localhost:7000/activity/add', requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     if (data?.status) {
                         dispatch(getActivitiesList());
+                        dispatch(nullEditAction());
                         setName("");
                         setActivity("");
                         setDescription("");
                         setDuration("");
                         setDate("");
+                        setEditId('')
                         // setErrorMsg(data?.message);
                         // setAlertDisplay(true);
                     }
@@ -61,6 +66,21 @@ export default function ActivityForm() {
         }
 
     }
+
+    useEffect(() => {
+        if (edit) {
+            setEditId(edit._id);
+            setName(edit?.name);
+            setDuration(edit?.duration);
+            setDescription(edit?.description);
+            setDate(edit?.date);
+            setActivity({ value: edit?.activity, label: edit?.activity })
+        }
+    }, []);
+
+    useEffect(() => {
+        dispatch(nullEditAction());
+    }, [])
 
 
     return (
@@ -79,7 +99,7 @@ export default function ActivityForm() {
                 value={activity}
                 name="activity"
                 options={activityOptions}
-                onChange={(e) => setActivity(e.value)}
+                onChange={(e) => setActivity(e)}
             />
             <MDBTextArea className='mb-4' rows='3' id='form5Example2' label='Description' value={description} onChange={(e) => setDescription(e.target.value)} />
             <MDBInput className='mb-4' type='number' id='form5Example1' label='Duration' value={duration} onChange={(e) => setDuration(e.target.value)} />
@@ -87,7 +107,7 @@ export default function ActivityForm() {
 
 
             <button className='form-control btn btn-success' type='submit'>
-                Submit
+                {editId ? 'Update' : 'Submit'}
             </button>
 
             {/* <MDBBtn type='submit' block onClick={submitData}>
