@@ -13,6 +13,7 @@ import Select from 'react-select';
 import { getActivitiesList } from '../../redux/store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { nullEditAction } from '../../redux/store/exerciseReducer';
+import { useNavigate } from 'react-router-dom';
 
 export default function ActivityForm() {
     const [name, setName] = useState('');
@@ -23,6 +24,7 @@ export default function ActivityForm() {
     const [editId, setEditId] = useState('');
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { edit } = useSelector(state => state)
 
     const activityOptions = [
@@ -54,7 +56,8 @@ export default function ActivityForm() {
                         setDescription("");
                         setDuration("");
                         setDate("");
-                        setEditId('')
+                        setEditId('');
+                        navigate('/')
                         // setErrorMsg(data?.message);
                         // setAlertDisplay(true);
                     }

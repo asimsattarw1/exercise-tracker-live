@@ -160,7 +160,7 @@ const Login = () => {
                   </div>
 
                   <div className="col-lg-12 col-md-12 col-sm-12 col-12 form-item mt-3">
-                    <span class="input-group-text">
+                    <span className="input-group-text">
                       <LockIcon className="icons" />
                     </span>
                     <input

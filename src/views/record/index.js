@@ -6,7 +6,7 @@ export default function Record() {
   return (
     <>
       <AppNavbar />
-      <CardList />
+      <CardList itemsPerPage={4}/>
     </>
   )
 }

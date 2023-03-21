@@ -262,7 +262,7 @@ const Signup = () => {
                           type="submit"
                           className="form-control btn btn-lg btn-primary"
                         >
-                          Sign Up
+                          SignUp
                         </button>
                       </div>
 
@@ -272,7 +272,7 @@ const Signup = () => {
                             type="submit"
                             className="form-control btn btn-lg mt-3 btn-warning"
                           >
-                            Cancel
+                            Login
                           </button>
                         </Link>
                       </div>
