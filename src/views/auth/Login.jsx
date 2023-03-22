@@ -8,6 +8,7 @@ import validator from "validator";
 import { useCookies } from "react-cookie";
 import { useDispatch } from "react-redux";
 import { userDataAction } from "../../redux/store/exerciseReducer";
+import backgroundVideo from '../../assets/videos/vid3.mp4';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -81,7 +82,11 @@ const Login = () => {
 
   return (
     <Fragment>
-      <div className="login-main-div">
+       <video className="background-vid" autoPlay loop muted>
+        <source src={backgroundVideo} type='video/mp4' />
+      </video>
+
+      {/* <div className="login-main-div"> */}
         <div
           className="row alert alert-danger alert-dismissible"
           style={{
@@ -208,7 +213,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </Fragment>
   );
 };

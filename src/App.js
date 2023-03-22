@@ -6,6 +6,8 @@ import Signup from './views/auth/Signup';
 import { useCookies } from "react-cookie";
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import Index from './views';
+import UserLogin from './components/UserLogin';
 
 function App() {
   const [cookies] = useCookies(["user"]);
@@ -14,7 +16,7 @@ function App() {
 
   useEffect(() => {
     if (myStore?.user != null) { navigate('/') }
-    else { navigate('/login') }
+    // else { navigate('/') }
   }, [cookies?.jwt, myStore?.user]);
 
   return (
@@ -27,6 +29,9 @@ function App() {
         </Routes>
         :
         <Routes>
+          <Route path="/" element={<Index />} />
+           {/* <Route path="/ulogin" element={<UserLogin />} /> */}
+
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>

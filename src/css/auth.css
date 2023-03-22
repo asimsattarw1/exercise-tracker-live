@@ -15,7 +15,7 @@ li,
   justify-content: flex-start;
   align-items: center;
   background-color: #F2F6FF;
-  height: 150vh;
+  height: 100vh;
   width: 100%;
   position: relative;
   padding: 30px;
@@ -247,6 +247,18 @@ li,
 
 /* login Style start */
 
+.background-vid {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 .login-main-div {
   display: flex;
   flex-direction: column;
@@ -285,7 +297,7 @@ li,
   background-color: transparent;
   position: relative;
   align-content: center;
-  opacity: .9;
+  opacity: .8;
 }
 
 .login-mono {

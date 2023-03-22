@@ -7,6 +7,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import CloseIcon from "@mui/icons-material/Close";
 import validator from "validator";
 import { useNavigate } from "react-router-dom";
+import backgroundVideo from '../../assets/videos/vid3.mp4';
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -96,7 +97,11 @@ const Signup = () => {
 
   return (
     <Fragment>
-      <div className="signup-main-div">
+      {/* <div className="signup-main-div"> */}
+      <video className="background-vid" autoPlay loop muted>
+        <source src={backgroundVideo} type='video/mp4' />
+      </video>
+
         <div
           className="row alert alert-danger alert-dismissible"
           style={{
@@ -283,7 +288,7 @@ const Signup = () => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </Fragment>
   );
 };
