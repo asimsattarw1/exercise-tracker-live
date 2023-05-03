@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/exercise-tracker-live/static/css/main.6af65436.css",
+    "main.js": "/exercise-tracker-live/static/js/main.52244535.js",
+    "static/media/vid3.mp4": "/exercise-tracker-live/static/media/vid3.49e2e486cb2b61fe019a.mp4",
+    "static/media/swim.gif": "/exercise-tracker-live/static/media/swim.84cd4faf9f1d0f47228d.gif",
+    "static/media/bicycle.gif": "/exercise-tracker-live/static/media/bicycle.fe7d9df629bc3fe51842.gif",
+    "static/media/hike.gif": "/exercise-tracker-live/static/media/hike.fa0a524d9b6ed52a5c0c.gif",
+    "static/media/walk.gif": "/exercise-tracker-live/static/media/walk.d0452de3148c2005ebc5.gif",
+    "static/media/fa-solid-900.ttf": "/exercise-tracker-live/static/media/fa-solid-900.2877d54f94f30c5d563c.ttf",
+    "static/media/run.gif": "/exercise-tracker-live/static/media/run.3ff8a656385cb704adc1.gif",
+    "static/media/fa-brands-400.ttf": "/exercise-tracker-live/static/media/fa-brands-400.13e40630e5866f777de8.ttf",
+    "static/media/mubeen.jpeg": "/exercise-tracker-live/static/media/mubeen.aa8b2ccca33e047cd0cf.jpeg",
+    "static/media/fa-solid-900.woff2": "/exercise-tracker-live/static/media/fa-solid-900.bdb9e23299f9d1320a8b.woff2",
+    "static/media/fa-brands-400.woff2": "/exercise-tracker-live/static/media/fa-brands-400.7be2266f1be21c44ecd4.woff2",
+    "static/media/img3.gif": "/exercise-tracker-live/static/media/img3.78705859e17486f2e642.gif",
+    "static/media/fa-regular-400.ttf": "/exercise-tracker-live/static/media/fa-regular-400.146404900f7550a9719d.ttf",
+    "static/media/asim.jpg": "/exercise-tracker-live/static/media/asim.6ca4d1148ba61fa1ad29.jpg",
+    "static/media/fa-regular-400.woff2": "/exercise-tracker-live/static/media/fa-regular-400.8bedd7cfa43a6c358cdd.woff2",
+    "static/media/a.avif": "/exercise-tracker-live/static/media/a.468e2f21760ef276ab1a.avif",
+    "static/media/raheel.jpg": "/exercise-tracker-live/static/media/raheel.667573cbcd77bc5f0be7.jpg",
+    "static/media/fa-v4compatibility.ttf": "/exercise-tracker-live/static/media/fa-v4compatibility.6c0a7b774ffa1cf0a059.ttf",
+    "static/media/img4.webp": "/exercise-tracker-live/static/media/img4.7593920aa0d66287d49d.webp",
+    "static/media/fa-v4compatibility.woff2": "/exercise-tracker-live/static/media/fa-v4compatibility.497d535001197a9c5b38.woff2",
+    "index.html": "/exercise-tracker-live/index.html",
+    "main.6af65436.css.map": "/exercise-tracker-live/static/css/main.6af65436.css.map",
+    "main.52244535.js.map": "/exercise-tracker-live/static/js/main.52244535.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6af65436.css",
+    "static/js/main.52244535.js"
+  ]
+}
